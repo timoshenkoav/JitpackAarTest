@@ -1,2 +1,28 @@
-configurations.maybeCreate("default")
-artifacts.add("default", file('lib-release.aar'))
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.android.library'
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 27
+        versionCode 1
+        versionName '1.0'
+    }
+}
+
+task homeGrown {
+    inputs.file file('lib-release.aar')
+    doLast { println 'Growing...' }
+}
+//configurations.each {configuration->
+//    println configuration
+//    configuration.add(file('lib-release.aar'))
+//}
+artifacts {
+    //archives jarIt
+    archives file('lib-release.aar')
+}
+//configurations.maybeCreate("default")
+//artifacts.add(":lib-release:default", file('lib-release.aar'))
+group = 'com.tunebrains.librelease'
+version = '1.0'
