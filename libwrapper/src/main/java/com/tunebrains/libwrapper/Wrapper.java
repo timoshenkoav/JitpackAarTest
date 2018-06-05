@@ -1,6 +1,6 @@
 package com.tunebrains.libwrapper;
 
-import com.tunebrains.lib.BuildConfig;
+//import com.tunebrains.lib.BuildConfig;
 
 public class Wrapper {
     public static final String wrap(){
